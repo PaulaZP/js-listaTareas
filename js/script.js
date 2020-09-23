@@ -22,7 +22,7 @@ formulario.addEventListener('submit',(event) => {
     const label = document.createElement('label');
     label.setAttribute('for', `tarea-${contadorTareas}`);
 
-    label.innerHTML = formulario.elements[0].value;
+    label.innerHTML = `${formulario.elements[0].value}-${formulario.elements[1].value}`;
 
     item.appendChild(checkbox);
     item.appendChild(label);
@@ -32,6 +32,7 @@ formulario.addEventListener('submit',(event) => {
         id: contadorTareas,
         nombre: formulario.elements[0].value,
         completo: false,
+        fecha: formulario.elements[1].value,
     };
     tareas.push(miTarea);
     console.log(tareas);
